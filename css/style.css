@@ -164,4 +164,7 @@ li>a>img{
             "text-output"
         ;
     }
+    .buttons>button{
+        font-size: 1rem;
+    }
 }
