@@ -1,0 +1,163 @@
+:root {
+    --background-color: #F3F5FC;
+    --dark-blue: #052051;
+    --blue: #609ED4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1440px;
+    max-height: 1024;
+    margin: auto;
+    overflow-y: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    grid-template-rows: 9fr 1fr;
+    grid-template-areas:
+        "header main"
+        "footer footer";
+    background-color: var(--background-color);
+}
+
+header {
+    grid-area: header;
+    font-size: 2rem;
+    text-align: center;
+    margin: 30% auto auto auto;
+}
+
+header>a {
+    text-decoration: none;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 9fr 1fr;
+    grid-template-areas:
+        "text-input text-output"
+        "buttons text-output"
+    ;
+}
+
+#text-input {
+    grid-area: text-input;
+    width: 90%;
+    margin: 10% auto 10% auto;
+    border: none;
+    background-color: var(--background-color);
+    padding: 5%;
+    border-radius: 32px;
+    font-size: 1.5rem;
+    resize: none;
+}
+
+#text-output {
+    grid-area: text-output;
+    height: 80%;
+    width: 90%;
+    border-radius: 32px;
+    margin: auto;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    /* overflow-x: scroll; */
+    overflow-y: auto;
+}
+
+.buttons {
+    grid-area: buttons;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.buttons>button {
+    border-radius: 30px;
+    width: 35%;
+    height: 80%;
+    background-color: var(--dark-blue);
+    color: #fff;
+    font-size: 1.8rem;
+    padding: auto;
+    border: none;
+}
+
+button:hover {
+    background-color: var(--blue);
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+}
+
+ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 5fr 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+        overflow-y: auto;
+    }
+
+    header {
+        grid-area: header;
+        font-size: 2rem;
+        text-align: center;
+        margin: 10px auto auto auto;
+    }
+
+    main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 4fr 1fr 4fr;
+        grid-template-areas:
+            "text-input"
+            "buttons"
+            "text-output"
+        ;
+    }
+}
