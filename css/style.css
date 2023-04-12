@@ -70,6 +70,8 @@ main {
     padding: 20px;
     /* overflow-x: scroll; */
     overflow-y: auto;
+    display: grid;
+    grid-template-rows: 8fr 1fr;
 }
 
 .buttons {
