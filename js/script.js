@@ -26,7 +26,7 @@ function decryptText(text) {
         if (letter == '\n') {
             result += '<br>'
         } else {
-            result += caracters[(caracters.indexOf(letter.toUpperCase()) - 10) % caracters.length]
+            result += caracters[(caracters.indexOf(letter.toUpperCase()) + caracters.length - 10) % caracters.length]
         }
     })
     return result
@@ -35,8 +35,10 @@ function decryptText(text) {
 encryptButton.addEventListener("click", function () {
     const text = textInput.value
     textOutput.innerHTML = encryptText(text)
+    console.log(text + '=>' + encryptText(text))
 })
 decryptButton.addEventListener("click", function () {
     const text = textInput.value
     textOutput.innerHTML = decryptText(text)
+    console.log(text + '=>' + decryptText(text))
 })
