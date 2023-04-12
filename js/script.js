@@ -13,18 +13,23 @@ function encryptText(text) {
     Array.from(text).forEach(letter => {
         switch (letter) {
             case 'e':
+            case 'é':
                 result += 'enter';
                 break;
             case 'i':
+            case 'í':
                 result += 'imes';
                 break;
             case 'a':
+            case 'á':
                 result += 'ai';
                 break;
             case 'o':
+            case 'ó':
                 result += 'ober';
                 break;
             case 'u':
+            case 'ú':
                 result += 'ufat';
                 break;
             default:
