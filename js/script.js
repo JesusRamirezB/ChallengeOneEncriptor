@@ -63,16 +63,29 @@ function decryptText(text) {
 }
 
 copyButton.addEventListener('click', function () {
-    const textoOculto = document.createElement("textarea");
-    textoOculto.value = textOutput.textContent;
-    textOutput.appendChild(textoOculto);
-    // Selecciona y copia el contenido del elemento de texto oculto
-    textoOculto.select();
-    document.execCommand("copy");
-    // Elimina el elemento de texto oculto
-    textOutput.removeChild(textoOculto);
-    alert("El texto se ha copiado al portapapeles.");
-    // location.reload();
+    // const textoOculto = document.createElement('textarea')
+    // textoOculto.value = textOutput.textContent
+    // textOutput.appendChild(textoOculto)
+    // // Selecciona y copia el contenido del elemento de texto oculto
+    // textoOculto.select()
+    // document.execCommand('copy')
+    // // Elimina el elemento de texto oculto
+    // textOutput.removeChild(textoOculto)
+    // alert('El texto se ha copiado al portapapeles.')
+    const text = textOutput.textContent;
+
+    if (!text) {
+        return;
+    }
+
+    navigator.clipboard.writeText(text).then(function () {
+        console.log('Text copied to clipboard');
+        alert('Text copied to clipboard');
+    }, function () {
+        console.error('Failed to copy text');
+        alert('Failed to copy text');
+    });
+
 })
 
 encryptButton.addEventListener('click', function () {
